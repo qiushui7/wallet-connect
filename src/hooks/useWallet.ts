@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
-import { injected } from 'wagmi/connectors'
 import { useToast } from '@/components/hooks/use-toast'
 
 export type WalletType = 'metamask' | 'okx' | 'unisat' | null
@@ -130,7 +129,7 @@ export function useWallet() {
         title: "成功",
         description: "钱包已断开连接",
       })
-    } catch (error) {
+    } catch {
       toast({
         variant: "destructive",
         title: "错误",
